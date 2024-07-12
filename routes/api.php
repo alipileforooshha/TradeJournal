@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\StrategyController;
+use App\Http\Controllers\TradeController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -11,5 +12,10 @@ Route::post('/register',[AuthController::class, 'register']);
 
 Route::prefix("strategies")->middleware("auth:api")->group( function(){
     Route::post("",[StrategyController::class, 'create'])->name("strategy.create");
-    Route::get("",[StrategyController::class, 'index'])->name("strategy.create");
+    Route::get("",[StrategyController::class, 'index'])->name("strategy.index");
+});
+
+Route::prefix("trades")->middleware("auth:api")->group( function(){
+    Route::post("",[TradeController::class, 'create'])->name("trade.create");
+    Route::get("",[TradeController::class, 'index'])->name("trade.index");
 });

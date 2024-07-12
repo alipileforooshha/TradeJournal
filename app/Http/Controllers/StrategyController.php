@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\strategy\CreateStrategyRequest;
+use App\Http\Requests\Strategy\CreateStrategyRequest;
 use App\Http\Resources\Strategy\StrategyCollection;
 use App\Models\Strategy;
 use GuzzleHttp\Psr7\Response as Psr7Response;
